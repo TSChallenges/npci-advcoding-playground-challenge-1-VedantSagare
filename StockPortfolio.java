@@ -7,23 +7,40 @@ class StockPortfolio {
 
     // TODO: Initialize stock details
     public StockPortfolio(String symbol, int quantity, double buyingPrice) {
-        // TODO
+        this.symbol = symbol;
+        this.quantity = quantity;
+        this.buyingPrice = buyingPrice;
+        this.currentPrice = buyingPrice;
     }
 
     // TODO: Update current market price
     public void updatePrice(double newPrice) {
-        // TODO
+        this.currentPrice = newPrice;
     }
 
     // TODO: Calculate total profit or loss
     public double calculateProfit() {
-        // TODO
-        return 0.0;
+        return (currentPrice - buyingPrice) * quantity;
     }
 
     // TODO: Calculate current total value of holdings
     public double getCurrentValue() {
         // TODO
-        return 0.0;
+        return currentPrice * quantity;
+    }
+    public String getSymbol() {
+        return symbol;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public double getBuyingPrice() {
+        return buyingPrice;
+    }
+
+    public double getCurrentPrice() {
+        return currentPrice;
     }
 }
